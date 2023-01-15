@@ -67,7 +67,6 @@ a {
   color: var(--accent-color);
 }
 
-
 .list img {
   display: block;
   width: 100%;
@@ -116,6 +115,10 @@ a {
   display: flex;
 }
 
+site-nav-item {
+  position: relative;
+}
+
 .site-nav-item:not(:last-child) {
   margin-right: 40px;
 }
@@ -125,6 +128,22 @@ a {
   padding-top: 24px;
   padding-bottom: 24px;
   display: block;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-nav-item .link.current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--secondary-accent-color);
 }
 
 /*contacts*/
@@ -133,6 +152,10 @@ a {
   letter-spacing: 0.02em;
   display: flex;
   margin-left: auto;
+}
+
+.contacts-list .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-item:not(:last-child) {
@@ -150,7 +173,7 @@ a {
      rgba(46, 47, 66, 0.7),
      rgba(46, 47, 66, 0.7)
       ), 
-      url(./images/people-office\ 1.jpg);
+      url(../images/people-office\ 1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -165,7 +188,6 @@ a {
   line-height: 1.07;
   text-align: center;
   letter-spacing: 0.02em;
-  color: var(--primary-white-color);
 }
 
 .hero .buttons {
@@ -184,8 +206,10 @@ a {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .hero .buttons:hover,
 .hero .buttons:focus {
   color: var(--primary-white-color);
@@ -329,31 +353,33 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
- }
 
- .link-icon:hover,
- .link-icon:focus {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-icon:hover,
+.link-icon:focus {
   background-color: var(--secondary-accent-color);
  }
 
  .clients-list-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #8E8F99;
-  border-radius: 4px;
-  width: 100%;
-  height: 100%;
-  fill: #8E8F99;
- }
+  height: 88px;
+  border: 1px solid #8e8f99;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  fill: #8e8f99;
 
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
  
  .clients-list-link:hover,
  .clients-list-link:focus {
   fill: var(--accent-color);
   border-color: var(--accent-color);
  }
-
 
  .clients-heading {
   margin-bottom: 72px;
@@ -364,7 +390,6 @@ a {
   letter-spacing: 0.03em;
   color: var(--secondary-color);
  }
-
  .clients-list {
   display: flex;
     justify-content: center;
@@ -372,9 +397,8 @@ a {
  }
 
  .clients-list-item {
-  width: calc((100%-120px)/6);
+  width: calc((100%-120px) / 6);
  }
-
  .clients-list-item:not(:last-child) {
   margin-right: 24px;
  }
@@ -436,11 +460,13 @@ footer .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ }
 
 .footer-link:hover,
 .footer-link:focus {
-  background-color: #31D0AA;
+  background-color: #31d0aa;
 }
 
 /*portfolio.html*/
@@ -468,24 +494,32 @@ footer .logo {
 
 .button-list .buttons {
   padding: 8px 16px;
-  border: 1px solid #E7E9FC;
+  border: 1px solid #e7e9fc;
   border-radius: 4px;
+
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
   letter-spacing: 0.04em;
+
   color: var(--accent-color);
   background-color: var(--background-our-team-buttons);
 }
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 
 .button-list .buttons:hover,
 .button-list .buttons:focus {
   border: 1px solid var(--accent-color);
+
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
 }
 
 .projects-list {
@@ -508,13 +542,13 @@ footer .logo {
 
 .projects-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects-link:hover,
 .projects-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-  0px 1px 1px rgba(46, 47, 66, 0.16),
-  0px 2px 1px rgba(46, 47, 66, 0.08);
+  0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .projects-list h2 {
@@ -531,6 +565,100 @@ footer .logo {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   margin-top: 8px;
+}
+
+.overlay {
+  position: relative;
+  width: 360px;
+  height: 300px;
+
+  overflow: hidden;
+}
+
+.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+
+  background-color: var(--accent-color);
+
+  transform: translatey(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-item:hover .overlay::after {
+  transform: translateY(0);
+}
+
+.overlay .overlay-paragraph {
+  position: absolute;
+  top: 40px;
+  left: 32px;
+  z-index: 3;
+  margin-top: 0;
+
+  color: #f4f4fd;
+
+  transform: translatey(300%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-item:hover .overlay .overlay-paragraph {
+  transform: translateY(0);
+}
+
+/* modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color:rgba(46, 47, 66, 0.4);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hadden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1);
+
+  width: 408px;
+  height: 576px;
+  background-color: #FCFCFC;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+              0px 1px 3px rgba(0, 0, 0, 0.12),
+              0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hadden .modal {
+transform: translate(-50%,-50%) scale(0.9);
+}
+
+.close-modal {
+  padding: 0;
+  border: 0;
+  position: absolute;
+  right: 25px;
+  top: 32px;
+  display: block;
 }
 
  
