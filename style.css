@@ -115,7 +115,7 @@ a {
   display: flex;
 }
 
-site-nav-item {
+.site-nav-item {
   position: relative;
 }
 
@@ -146,6 +146,10 @@ site-nav-item {
   background-color: var(--secondary-accent-color);
 }
 
+.site-nav-item .link.current {
+  color: var(--accent-color);
+}
+
 /*contacts*/
 .contacts-list {
   line-height: 1.5;
@@ -154,9 +158,6 @@ site-nav-item {
   margin-left: auto;
 }
 
-.contacts-list .link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 .contacts-item:not(:last-child) {
   margin-right: 40px;
@@ -164,16 +165,20 @@ site-nav-item {
 
 /*index.html*/
 .hero {
-  padding-top: 192px;
   height: 600px;
+  width: 1440px;
+  padding-top: 192px;
+  margin-right: auto;
+  margin-left: auto;
+
   text-align: center;
   background-color: var(--secondary-color);
   background-image: linear-gradient(
-     to right,
-     rgba(46, 47, 66, 0.7),
-     rgba(46, 47, 66, 0.7)
-      ), 
-      url(../images/people-office\ 1.jpg);
+      to right,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office\ 1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -188,6 +193,7 @@ site-nav-item {
   line-height: 1.07;
   text-align: center;
   letter-spacing: 0.02em;
+  color: var(--primary-white-color);
 }
 
 .hero .buttons {
@@ -208,11 +214,11 @@ site-nav-item {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .hero .buttons:hover,
 .hero .buttons:focus {
-  color: var(--primary-white-color);
   background-color: var(--secondary-accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -233,7 +239,6 @@ site-nav-item {
   justify-content: center;
   align-items: center;
 }
-
 
 .features-list {
   display: flex;
@@ -339,13 +344,13 @@ site-nav-item {
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- .list-icon-item:not(:last-child) {
+.list-icon-item:not(:last-child) {
   margin-right: 24px;
- }
+}
 
- .link-icon {
+.link-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -360,48 +365,49 @@ site-nav-item {
 .link-icon:hover,
 .link-icon:focus {
   background-color: var(--secondary-accent-color);
- }
+}
 
- .clients-list-link {
+.clients-list-link {
   height: 88px;
   border: 1px solid #8e8f99;
-   border-radius: 4px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   fill: #8e8f99;
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
               border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
- 
- .clients-list-link:hover,
- .clients-list-link:focus {
+
+.clients-list-link:hover,
+.clients-list-link:focus {
   fill: var(--accent-color);
   border-color: var(--accent-color);
- }
+}
 
- .clients-heading {
+.clients-heading {
   margin-bottom: 72px;
   font-weight: 700;
   font-size: 36px;
-  line-height: 1,16;
+  line-height: 1, 16;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--secondary-color);
- }
- .clients-list {
-  display: flex;
-    justify-content: center;
-  align-items: center;
- }
+}
 
- .clients-list-item {
+.clients-list {
+  display: flex;
+  justify-content: center;
+}
+
+.clients-list-item {
   width: calc((100%-120px) / 6);
- }
- .clients-list-item:not(:last-child) {
+}
+
+.clients-list-item:not(:last-child) {
   margin-right: 24px;
- }
+}
 
 /*footer*/
 .page-footer {
@@ -462,7 +468,7 @@ footer .logo {
   justify-content: center;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
- }
+}
 
 .footer-link:hover,
 .footer-link:focus {
@@ -505,12 +511,12 @@ footer .logo {
 
   color: var(--accent-color);
   background-color: var(--background-our-team-buttons);
-}
-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .button-list .buttons:hover,
 .button-list .buttons:focus {
@@ -548,7 +554,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
 .projects-link:hover,
 .projects-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-  0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .projects-list h2 {
@@ -626,7 +632,7 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hadden {
+.backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -648,16 +654,19 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hadden .modal {
+.backdrop.is-hidden .modal {
 transform: translate(-50%,-50%) scale(0.9);
 }
 
 .close-modal {
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: 0;
+  border-radius: 50%;
   position: absolute;
-  right: 25px;
-  top: 32px;
+  right: 24px;
+  top: 24px;
   display: block;
 }
 
